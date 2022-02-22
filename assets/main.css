@@ -33,3 +33,15 @@ width: 100%
 .dice{
     width:20vw
 }
+.end-party{
+    z-index: 1;
+    background-color: aqua;
+    border: solid;
+    height:100px;
+    top: 50px;
+   display: block;
+    width:80%;
+    height: 75%;
+    position:fixed;
+    left: 10%;
+}

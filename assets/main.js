@@ -1,4 +1,5 @@
 const resetParty = $('#addBtn')
+const endParty = $('#end-party')
 const roll = $('#roll')
 const hold = $('#hold')
 const plr1 = $('#plr1')
@@ -11,24 +12,26 @@ const holdScorePly2 = $('#holdScorePly2')
 
 const currentScorePlyr1 = $('#currentScorePly1')
 const currentScorePlyr2 = $('#currentScorePly2')
-let test = 2
+
 const resetEl = () => {
+    currentPly1.show()
+    currentPly2.removeAttr('style').hide()
+
     holdScorePly1.text(0)
     holdScorePly2.text(0)
     currentScorePlyr1.text(0)
     currentScorePlyr2.text(0)
 }
-// switch player function
 let currentPlayer = 0;
 const switchPly = () => {
     if (currentPlayer !== 0) {
-        currentPly2.show()
-        currentPly1.removeAttr('style').hide()
-        return currentPlayer++;
+        currentPly1.show()
+        currentPly2.removeAttr('style').hide()
+         currentPlayer++;
     } else {
-        currentPly2.removeAttr('style').hide();
-        currentPly1.show();
-        return currentPlayer--;
+        currentPly1.removeAttr('style').hide();
+        currentPly2.show();
+         currentPlayer--;
     }
 };
 
@@ -37,7 +40,7 @@ let curr1
 let curr2
 const currentScore = (value) => {
     if (value !== 1) {
-        if (currentPlayer !== 0) {
+        if (currentPlayer === 0) {
             curr1 = value;
             currentScorePlyr1.text(curr1)
             return curr1;
@@ -48,7 +51,7 @@ const currentScore = (value) => {
             return curr2;
         }
     } else {
-        if (currentPlayer !== 0) {
+        if (currentPlayer === 0) {
             curr1 = 0;
             currentScorePlyr1.text(1)
             return curr1;
@@ -61,22 +64,14 @@ const currentScore = (value) => {
     }
 };
 
-// function total
+// total score function
 let tot1 = 0
 let tot2 = 0
 
 const total = () => {
-    // if (curr1 === 1) {
-    //     tot1 += 0
-    //     return tot1
-    // }
-    // if (curr2 === 1) {
-    //     tot2 += 0
-    //     return tot2
-    // }
-    if (currentPlayer !== 0) {
+    if (currentPlayer === 0) {
         tot1 += curr1
-        holdScorePly1.text(tot1)
+        holdScorePly1.text (tot1)
         return tot1
     } else {
         tot2 += curr2
@@ -84,26 +79,29 @@ const total = () => {
         return tot2
     }
 }
-$(document).ready(() => {
+
+$(window).on("load",() => {
     console.log('jquery inclut');
     resetEl()
-    switchPly()
-
+    endParty.removeAttr('style').hide();
 })
+
 const bindBtn = () => {
-    roll.unbind('click').one('click', function (e) {
+    $('#roll').unbind('click').one('click', function (e) {
         let diceVal = Math.floor(Math.random() * (7 - 1) + 1)
         currentScore(diceVal)
-        console.log(diceVal);
+        holdBind()
     })
 }
-
 bindBtn()
 
-hold.on('click', function () {
-    bindBtn()
-    total()
-    currentScorePlyr1.text(0)
-    currentScorePlyr2.text(0)
-    switchPly()
-})
+const holdBind = () =>{
+    hold.unbind('click').one('click',function(){
+        bindBtn()
+        total()
+        switchPly()
+        currentScorePlyr1.text(0) 
+        currentScorePlyr2.text(0)
+    })
+}
+holdBind()
