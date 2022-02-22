@@ -1,6 +1,7 @@
-const resetParty = $('#resetParty')
+const resetGame = $('#resetGame')
 const endParty = $('#end-party')
 const winner = $('#winner')
+const newGame = $('#newGame')
 const roll = $('#roll')
 const hold = $('#hold')
 const plr1 = $('#plr1')
@@ -26,6 +27,7 @@ const resetEl = () => {
     currentScorePlyr1.text(0)
     currentScorePlyr2.text(0)
 }
+
 let currentPlayer = 0;
 const switchPly = () => {
     if (currentPlayer !== 0) {
@@ -102,8 +104,8 @@ $(window).on("load",() => {
     endParty.removeAttr('style').hide();
 })
 
-// reset party event
-resetParty.on('click',() =>{
+// reset game event
+resetGame.on('click',() =>{
     resetEl()
     tot1 = 0
     tot2 = 0
@@ -131,3 +133,11 @@ const holdBind = () =>{
     })
 }
 holdBind()
+
+// new game event in modal
+newGame.on('click', ()=> {
+    endParty.removeAttr('style').hide();
+    resetEl()
+    tot1 = 0
+    tot2 = 0 
+})
