@@ -1,4 +1,4 @@
-const resetParty = $('#addBtn')
+const resetParty = $('#resetParty')
 const endParty = $('#end-party')
 const winner = $('#winner')
 const roll = $('#roll')
@@ -15,6 +15,9 @@ const currentScorePlyr1 = $('#currentScorePly1')
 const currentScorePlyr2 = $('#currentScorePly2')
 
 const resetEl = () => {
+    currentPlayer=0
+    bindBtn()
+    holdBind()
     currentPly1.show()
     currentPly2.removeAttr('style').hide()
 
@@ -92,14 +95,23 @@ const control = () => {
     }
 
 }
+
 $(window).on("load",() => {
     console.log('jquery inclut');
     resetEl()
     endParty.removeAttr('style').hide();
 })
 
+// reset party event
+resetParty.on('click',() =>{
+    resetEl()
+    tot1 = 0
+    tot2 = 0
+})
+
+// roll event
 const bindBtn = () => {
-    $('#roll').unbind('click').one('click', function (e) {
+    roll.unbind('click').one('click', function (e) {
         let diceVal = Math.floor(Math.random() * (7 - 1) + 1)
         currentScore(diceVal)
         holdBind()
@@ -107,6 +119,7 @@ const bindBtn = () => {
 }
 bindBtn()
 
+// hold event
 const holdBind = () =>{
     hold.unbind('click').one('click',function(){
         bindBtn()
