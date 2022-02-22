@@ -61,7 +61,29 @@ const currentScore = (value) => {
     }
 };
 
+// function total
+let tot1 = 0
+let tot2 = 0
 
+const total = () => {
+    // if (curr1 === 1) {
+    //     tot1 += 0
+    //     return tot1
+    // }
+    // if (curr2 === 1) {
+    //     tot2 += 0
+    //     return tot2
+    // }
+    if (currentPlayer !== 0) {
+        tot1 += curr1
+        holdScorePly1.text(tot1)
+        return tot1
+    } else {
+        tot2 += curr2
+        holdScorePly2.text(tot2)
+        return tot2
+    }
+}
 $(document).ready(() => {
     console.log('jquery inclut');
     resetEl()
@@ -80,6 +102,7 @@ bindBtn()
 
 hold.on('click', function () {
     bindBtn()
+    total()
     currentScorePlyr1.text(0)
     currentScorePlyr2.text(0)
     switchPly()
