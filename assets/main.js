@@ -1,5 +1,6 @@
 const resetParty = $('#addBtn')
 const endParty = $('#end-party')
+const winner = $('#winner')
 const roll = $('#roll')
 const hold = $('#hold')
 const plr1 = $('#plr1')
@@ -80,6 +81,17 @@ const total = () => {
     }
 }
 
+// control function
+const control = () => {
+    if (tot1 >= 10) {
+        endParty.show()
+        winner.text('Player 1')
+    } if (tot2 >= 10) {
+        endParty.show()
+        winner.text('Player 2')
+    }
+
+}
 $(window).on("load",() => {
     console.log('jquery inclut');
     resetEl()
@@ -102,6 +114,7 @@ const holdBind = () =>{
         switchPly()
         currentScorePlyr1.text(0) 
         currentScorePlyr2.text(0)
+        control()
     })
 }
 holdBind()
