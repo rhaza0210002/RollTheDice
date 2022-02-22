@@ -1,0 +1,35 @@
+/* code couleur
+Rouge add button : D36F6F
+*/
+*{
+    background-color: bisque;
+    width: 100%;
+    max-height: 100%;
+}
+.newGame{
+    height:10%;
+    width: 100%
+}
+.playGround{
+    margin-top: 5em;
+height:50%;
+width: 100%
+}
+.boardPart{
+height:25%;
+width: 100%
+}
+#currentPly1,#currentPly2{
+    width:.5em
+}
+.iconeImg{
+    width:20px
+}
+
+.button{
+    text-decoration: none;
+    color: black;
+}
+.dice{
+    width:20vw
+}
