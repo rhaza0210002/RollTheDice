@@ -116,6 +116,7 @@ const bindBtn = () => {
     roll.unbind('click').one('click', function (e) {
         let diceVal = Math.floor(Math.random() * (7 - 1) + 1)
         currentScore(diceVal)
+        $('#dice').attr('src',`./assets/image/Dice${diceVal}.png`)
         holdBind()
     })
 }
