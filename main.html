@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/main.css" />
-    <script src="./jquery-3.6.0.min.js"></script>
-    <title>Roll the dice</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/main.css" />
+  <script src="./jquery-3.6.0.min.js"></script>
+  <title>Roll the dice</title>
+</head>
+
+<body>
+  <header>
+    <h1>Roll The Dice</h1>
+  </header>
+  <main id="mainGame">
     <div class="ion-text-center newGame">
       <ion-grid>
         <ion-row class="ion-justify-content-center">
@@ -18,7 +28,7 @@
                 <img src="./assets/image/add.png" class="iconeImg" alt="" />
                 NEW GAME
               </ion-button>
-            
+  
             </div>
           </ion-col>
         </ion-row>
@@ -30,21 +40,21 @@
           <ion-col>
             <div id="plr1">
               <p>
-                Player 1
+                PLAYER 1
                 <img src="./assets/image/current.png" id="currentPly1" alt="" />
               </p>
             </div>
-            <div id="holdScorePly1" ></div>
+            <div id="holdScorePly1"></div>
           </ion-col>
           <ion-col class="diceTest">
-            <div>
-              <img src="./assets/image/Dice1.png" class="dice"id="dice" alt="" />
+            <div class="diceStyle">
+              <img src="./assets/image/Dice1.png" class="dice" id="dice" alt="" />
             </div>
           </ion-col>
           <ion-col>
             <div id="plr2">
               <p>
-                Player 2
+                PLAYER 2
                 <img src="./assets/image/current.png" id="currentPly2" alt="" />
               </p>
             </div>
@@ -53,61 +63,64 @@
         </ion-row>
       </ion-grid>
     </div>
-
+  
     <div class="ion-text-center boardPart">
       <ion-grid>
         <ion-row>
-          <ion-col size="4" class="testBox">
-            <div class="testBox">CURRENT</div>
-            <div id="currentScorePly1"></div>
+          <ion-col size="4">
+            <div class="testBox">
+  
+              <p>CURRENT</p>
+              <p id="currentScorePly1"></p>
+            </div>
           </ion-col>
           <ion-col>
-            <div >
-              <ion-button id="roll" fill="clear">
-                  <img src="./assets/image/roll.png" class="iconeImg" alt="" />
-                  ROLL DICE
-              </ion-button>
-              </div>
-    
-     
             <div>
-              <ion-button id="hold" fill="clear">
-                  
-                  <img src="./assets/image/hold.png" class="iconeImg" alt="" />
-    
-                  HOLD
-                </ion-button>
-            
+              <ion-button id="roll" class="eventbtn" fill="clear">
+                <img src="./assets/image/roll.png" class="iconeImg" alt="" />
+                ROLL DICE
+              </ion-button>
+            </div>
+  
+  
+            <div>
+              <ion-button id="hold" class="eventbtn" fill="clear">
+  
+                <img src="./assets/image/hold.png" class="iconeImg" alt="" />
+  
+                HOLD
+              </ion-button>
+  
             </div>
           </ion-col>
           <ion-col size="4">
-            <div>CURRENT</div>
-            <div id="currentScorePly2"></div>
+            <div class="testBox">
+              <p>CURRENT</p>
+              <p id="currentScorePly2"></p>
+            </div>
           </ion-col>
+  
         </ion-row>
       </ion-grid>
     </div>
-    <div class="end-party" id="end-party">
-      <p>THE WINNER IS</p>
-      <P id="winner"></P>
-      
-      <button type="button"class="creatParty" id="newGame">Nouvelle partie</button>
-      
-  </div>
-    <!-- script -->
+  </main>
+  
+  <div class="end-party" id="end-party">
+    <p>THE WINNER IS</p>
+    <P id="winner"></P>
 
-    <script src="./assets/main.js"></script>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
-    />
-  </body>
+    <button type="button" class="creatParty" id="newGame">Nouvelle partie</button>
+
+  </div>
+  <footer>
+    <p class="copyright">&copy; 2022 De Oliveira Mallaury</p>
+  </footer>
+  <!-- script -->
+
+  <script src="./assets/main.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</body>
+
 </html>

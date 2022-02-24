@@ -91,14 +91,18 @@ const control = () => {
     if (tot1 >= 10) {
         endParty.show()
         winner.text('Player 1')
-    } if (tot2 >= 10) {
+        $('#mainGame').css("filter","blur(8px)")
+    } else if (tot2 >= 10) {
         endParty.show()
         winner.text('Player 2')
+        $('#mainGame').css("filter","blur(8px)")
     }
 
 }
 
 $(window).on("load",() => {
+    // $('#mainGame').removeAttr('style').hide()
+
     console.log('jquery inclut');
     resetEl()
     endParty.removeAttr('style').hide();
@@ -138,6 +142,7 @@ holdBind()
 // new game event in modal
 newGame.on('click', ()=> {
     endParty.removeAttr('style').hide();
+    $('#mainGame').removeAttr('style')
     resetEl()
     tot1 = 0
     tot2 = 0 
