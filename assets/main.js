@@ -101,7 +101,6 @@ const control = () => {
 }
 
 $(window).on("load",() => {
-    // $('#mainGame').removeAttr('style').hide()
 
     console.log('jquery inclut');
     resetEl()
@@ -118,10 +117,12 @@ resetGame.on('click',() =>{
 // roll event
 const bindBtn = () => {
     roll.unbind('click').one('click', function (e) {
+        let audio= new Audio('./assets/sound/dice.mp3')
         let diceVal = Math.floor(Math.random() * (7 - 1) + 1)
         currentScore(diceVal)
         $('#dice').attr('src',`./assets/image/Dice${diceVal}.png`)
         holdBind()
+        audio.play()
     })
 }
 bindBtn()
