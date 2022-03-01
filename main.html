@@ -1,102 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/main.css" />
-    <script src="./jquery-3.6.0.min.js"></script>
-    <title>Roll the dice</title>
-  </head>
-  <body>
-    <div class="ion-text-center newGame">
-      <ion-grid>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./assets/main.css" /> -->
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./jquery-3.6.0.min.js"></script>
+  <title>Roll the dice</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Roll the dice</h1The Dice</h1>
+  </header>
+  <main id="mainGame">
+    <ion-grid>
+      <div class="ion-text-center newGame">
         <ion-row class="ion-justify-content-center">
-          <ion-col size="4">
+          <ion-col size-xs="4" >
             <div>
-              <a href="./main.html" class="button" id="addBtn">
+              <ion-button id="resetGame" fill="clear">
                 <img src="./assets/image/add.png" class="iconeImg" alt="" />
-                NEW GAME</a
-              >
+                <p class="btnText">NEW GAME</p>
+              </ion-button>
             </div>
           </ion-col>
         </ion-row>
-      </ion-grid>
-    </div>
-    <div class="ion-text-center playGround">
-      <ion-grid>
+      </div>
+      <div class="ion-text-center playGround">
         <ion-row>
-          <ion-col>
+          <ion-col class="plrStyle" size-xs="4">
             <div id="plr1">
               <p>
-                Player 1
+                PLAYER 1
                 <img src="./assets/image/current.png" id="currentPly1" alt="" />
               </p>
             </div>
-            <div id="holdScorePly1" ></div>
+            <br>
+            <div id="holdScorePly1"></div>
           </ion-col>
-          <ion-col class="diceTest">
-            <div>
-              <img src="./assets/image/Dice1.png" class="dice"id="diceImg" alt="" />
+       
+          <ion-col class="diceTest"size-xs="4">
+            <div class="diceStyle">
+              <img src="./assets/image/Dice1.png" class="dice" id="dice" alt="" />
             </div>
           </ion-col>
-          <ion-col>
+          <ion-col class="plrStyle" size-xs="4">
             <div id="plr2">
               <p>
-                Player 2
+                PLAYER 2
                 <img src="./assets/image/current.png" id="currentPly2" alt="" />
               </p>
             </div>
+            <br>
             <div id="holdScorePly2"></div>
           </ion-col>
         </ion-row>
-      </ion-grid>
-    </div>
-
-    <div class="ion-text-center boardPart">
-      <ion-grid>
+      </div>
+      <div class="ion-text-center boardPart">
         <ion-row>
-          <ion-col size="4" class="testBox">
-            <div class="testBox">CURRENT</div>
-            <div id="currentScorePly1"></div>
-          </ion-col>
-          <ion-col>
-            <div >
-              <a href="" class="button" id="rollBtn">
-                <img src="./assets/image/roll.png" class="iconeImg" alt="" />
-                ROLL DICE</a
-              >
+          <ion-col size-xs="4">
+            <div class="current">
+
+              CURRENT
+              <p id="currentScorePly1"></p>
             </div>
+          </ion-col>
+          <ion-col  size-xs="4">
             <div>
-              <a href="" class="button" id="holdBtn">
-                <img src="./assets/image/hold.png" class="iconeImg" alt="" />
+              <ion-button id="roll" class="eventbtn " fill="clear">
+                <img src="./assets/image/roll.png" class="iconeImg" alt="" />
+                <p class="btnText">ROLL DICE</p>
+              </ion-button>
+            </div>
 
-                HOLD</a
-              >
+
+            <div>
+              <ion-button id="hold" class="eventbtn ion-text-center" fill="clear">
+
+                <img src="./assets/image/hold.png" class="iconeHold" alt="" />
+                <p class="btnHold">HOLD</p>
+
+              </ion-button>
+
             </div>
           </ion-col>
-          <ion-col size="4">
-            <div>CURRENT</div>
-            <div id="currentScorePly2"</div>
+          <ion-col size-xs="4">
+            <div class="current">
+              CURRENT
+              <p id="currentScorePly2"></p>
+            </div>
           </ion-col>
+
         </ion-row>
-      </ion-grid>
-    </div>
+    </ion-grid>
+  </main>
 
-    <!-- script -->
+  <div class="end-party" id="end-party">
+    <p>THE WINNER IS</p>
+    <P id="winner"></P>
 
-    <script src="./assets/main.js"></script>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
-    />
-  </body>
+    <button type="button" class="creatParty" id="newGame">Nouvelle partie</button>
+
+  </div>
+  <footer class="bar-positive">
+    <p class="copyright">&copy; 2022 De Oliveira Mallaury</p>
+    <!-- <h1 class="title">{{myTitle}}</h1> -->
+
+  </footer>
+    <!-- <ion-footer  collapse="fade">
+      <ion-toolbar >
+      </ion-toolbar>
+    </ion-footer> -->
+
+  <!-- script -->
+
+  <script src="./assets/main.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</body>
+
 </html>
