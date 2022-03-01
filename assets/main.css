@@ -22,7 +22,6 @@ header{
 main {
     min-height:76vh;
     margin-top:6vh;
-    orientation: vertical;
 }
 footer{
     height:5vh;
@@ -70,7 +69,8 @@ height:25%;
     line-height: 1.5rem;
 }
 
-.iconeImg{
+.iconeImg,
+.iconeHold  {
     width: 30px;
     display: block;
     position: absolute;
@@ -93,8 +93,8 @@ height:25%;
     color: black;
 }
 .dice{
-    width:35%;
-    padding-top:5em
+    width:15vw;
+    padding-top:2em
 }
 .end-party{
     z-index: 2;
@@ -111,34 +111,35 @@ height:25%;
   
 }
 
-@media screen and (orientation: portrait) {
-    body{padding: 1rem;}
-    #plr1,
-    #plr2{
-        font-size: 2.5vw;
+@media (max-width:393px) and (orientation:portrait) {
+    header{
+        height: 5vh;
     }
-    #currentPly1, #currentPly2{
-        width:.5em
-    }
-    .testBox{
-        font-size: 2.5vw;
-        width:11em
-    }
-    .btnText{
-        font-size: 2vw;
-        left: 1vw;
+    .playGround,
+    .boardPart{
+        margin-top: 6vh;
+        height: 18vh;
 
     }
-    .btnHold{
-        font-size: 2vw;
-
-        left: -.5vw;
+    .current{
+        padding-top:1rem
     }
-    .iconeImg{
-        width:1.5em
+    .btnText,
+    .btnHold {
+    display: none;
+    }
+#plr1,
+#plr2{
+    font-weight: 700;
+    font-size: 1.5rem;
+  
+}
+    .diceStyle{height: 100%;}
+    footer{
+        font-size: 1.5rem;
+        min-height: 2vh;
     }
 }
-
 
 /*@media screen and (orientation: portrait) {
     header,main,.footertest

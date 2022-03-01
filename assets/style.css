@@ -1,0 +1,91 @@
+*{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  
+}
+body{
+
+    height: 100%;
+    font-family: 'lato',sans-serif;
+    font-weight: 400;
+    background-color: bisque;
+    z-index: 1;
+}
+
+ header{
+    height: 5vh;
+}
+main {
+    min-height:82vh;
+    margin-top:6vh;
+    background-position: center;
+    background-repeat: no-repeat ; 
+    background-image: url(./image/background.svg);
+}
+
+
+footer{
+    height:5vh;
+    background-color:peachpuff;
+}
+.title{
+    text-align: center;
+    font-family: 'lato',sans-serif;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+.playGround,
+.boardPart{
+    margin-top: 6vh;
+    height: 18vh;
+
+}
+
+.current{
+    width: 25vw;
+    padding-top:1rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+    border-radius: 9%;
+    color: white;
+    background-color: #D36F6F;
+    line-height: 1.5rem;
+    font-size: .85rem;
+
+}
+.btnText,
+.btnHold {
+display: none;
+}
+#plr1,
+#plr2{
+font-weight: 700;
+font-size: 1.5rem;
+width: 25vw;
+margin-left:auto;
+margin-right:auto;
+
+}
+.iconeImg,
+.iconeHold  {
+    width: 30px;
+    display: block;
+    position: absolute;
+    left: 7vw;
+}
+#currentPly1,#currentPly2{
+    width:.5em
+}
+.dice{
+    width:15vw;
+    padding-top:2em
+}
+.diceStyle{height: 100%;}
+
+.copyright{
+    text-align:right;
+    font-size: .5em;
+}

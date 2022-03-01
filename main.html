@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./assets/main.css" /> -->
+  <link rel="stylesheet" href="./assets/style.css">
   <script src="./jquery-3.6.0.min.js"></script>
   <title>Roll the dice</title>
 </head>
@@ -22,7 +23,7 @@
     <ion-grid>
       <div class="ion-text-center newGame">
         <ion-row class="ion-justify-content-center">
-          <ion-col size-lg="4" size-xs="10" size-md="6">
+          <ion-col size-xs="4" >
             <div>
               <ion-button id="resetGame" fill="clear">
                 <img src="./assets/image/add.png" class="iconeImg" alt="" />
@@ -34,42 +35,44 @@
       </div>
       <div class="ion-text-center playGround">
         <ion-row>
-          <ion-col size-lg="4" size-xs="3">
+          <ion-col class="plrStyle" size-xs="4">
             <div id="plr1">
               <p>
                 PLAYER 1
                 <img src="./assets/image/current.png" id="currentPly1" alt="" />
               </p>
             </div>
+            <br>
             <div id="holdScorePly1"></div>
           </ion-col>
-          <ion-col class="diceTest" size-lg="4" size-xs="5">
+       
+          <ion-col class="diceTest"size-xs="4">
             <div class="diceStyle">
               <img src="./assets/image/Dice1.png" class="dice" id="dice" alt="" />
             </div>
           </ion-col>
-          <ion-col size-lg="4" size-xs="3">
+          <ion-col class="plrStyle" size-xs="4">
             <div id="plr2">
               <p>
                 PLAYER 2
                 <img src="./assets/image/current.png" id="currentPly2" alt="" />
               </p>
             </div>
+            <br>
             <div id="holdScorePly2"></div>
           </ion-col>
         </ion-row>
       </div>
-
       <div class="ion-text-center boardPart">
         <ion-row>
-          <ion-col size-lg="4" size-xs="3">
-            <div class="testBox">
+          <ion-col size-xs="4">
+            <div class="current">
 
               CURRENT
               <p id="currentScorePly1"></p>
             </div>
           </ion-col>
-          <ion-col size-lg="4" size-xs="5">
+          <ion-col  size-xs="4">
             <div>
               <ion-button id="roll" class="eventbtn " fill="clear">
                 <img src="./assets/image/roll.png" class="iconeImg" alt="" />
@@ -81,15 +84,15 @@
             <div>
               <ion-button id="hold" class="eventbtn ion-text-center" fill="clear">
 
-                <img src="./assets/image/hold.png" class="iconeImg" alt="" />
+                <img src="./assets/image/hold.png" class="iconeHold" alt="" />
                 <p class="btnHold">HOLD</p>
 
               </ion-button>
 
             </div>
           </ion-col>
-          <ion-col size-lg="4" size-xs="3">
-            <div class="testBox">
+          <ion-col size-xs="4">
+            <div class="current">
               CURRENT
               <p id="currentScorePly2"></p>
             </div>
@@ -106,11 +109,15 @@
     <button type="button" class="creatParty" id="newGame">Nouvelle partie</button>
 
   </div>
-  <ion-footer class="footertest" collapse="fade">
-    <ion-toolbar>
-      <ion-title class="copyright">&copy; 2022 De Oliveira Mallaury</ion-title>
-    </ion-toolbar>
-  </ion-footer>
+  <footer class="bar-positive">
+    <p class="copyright">&copy; 2022 De Oliveira Mallaury</p>
+    <!-- <h1 class="title">{{myTitle}}</h1> -->
+
+  </footer>
+    <!-- <ion-footer  collapse="fade">
+      <ion-toolbar >
+      </ion-toolbar>
+    </ion-footer> -->
 
   <!-- script -->
 
