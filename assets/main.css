@@ -1,175 +1,205 @@
-/* code couleur
-Rouge add button : D36F6F
-*/
+:root {
+    --ff-primary:  'lato',sans-serif;
+    --fw-thin:300;
+    --fw-reg: 400;
+    --fw-bold: 900;
+  
+    --clr-light: #ffd1d1;
+    --clr-clear: #fbaaaa;
+    --clr-medium: #D36F6F;
+    --clr-dark: #831b1b;
+  
+    --fs-h1: 3rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.25rem;
+    --fs-body: .85rem;
+
+  }
 *{
     width: 100%;
     margin: 0;
     padding: 0;
-    
+  
 }
 body{
-    max-height: 100%;
-    font-family: 'lato',sans-serif;
-    font-weight: 400;
-    background-color: bisque;
+    height: 100%;
+    font-family: var(--ff-primary);
+    background-color:var(--clr-light);
     z-index: 1;
 }
 
-header{
-   margin-top:-20px;
+ header{
+    margin-top:-4vh;
+    background-color: var(--clr-medium);
     height: 10vh;
-    background-color: bisque;
 }
 main {
-    min-height:76vh;
+    min-height:80vh;
     margin-top:6vh;
 }
+
+
 footer{
-    min-height:5vh;
-    background-color:gray;
-}
-.copyright{
-    text-align:right;
-}
-.newGame{
-    height:10%;
+    height:10vh;
+    background-color:var(--clr-clear);
+    border-top: solid 1px;
+    border-color: var(--clr-dark);
+    color: var(--clr-dark);
 }
 .title{
-    text-align: center;
     font-style: italic;
-    /* font-weight: bold; */
-    font-size: 2.3rem;
+    color:var(--clr-clear);
+    padding-top:3vh;
+    line-height: 1.5rem;
+    text-align: center;
+    font-weight:var( --fw-bold);
+    font-size: var( --fs-h1);
 }
-.playGround{
-    /* margin-top: 5em; */
-height:50%;
-}
+
+.playGround,
 .boardPart{
-height:25%;
+    margin-top: 6vh;
+    height: 18vh;
 }
-#currentPly1,#currentPly2{
-    width:.5em
+
+.boardPart{
+    padding-top:   3rem;
 }
+
+.btnText,
+.btnHold {
+    display: none;
+    font-weight: var(--fw-reg);
+}
+
 #plr1,
 #plr2{
+    color: var(--clr-dark);
+    font-size: var(--fs-h2);
     font-weight: 700;
-    font-size: 2.5rem;
-  
+    width: 25vw;
+    margin-left:auto;
+    margin-right:auto;
 }
-.eventbtn{
-    margin:1rem
+
+#holdScorePly1,
+#holdScorePly2{
+    color:  var(--clr-dark);
 }
-.testBox{
-    width: 15vw;
+.current{
+    width: 25vw;
     margin-left:auto;
     margin-right:auto;
     padding:1em;
     border-radius: 9%;
-    color: white;
-    background-color: #D36F6F;
+    color: var(--clr-light);
+    background-color: var(--clr-medium);
     line-height: 1.5rem;
+    font-size: var(--fs-body);
 }
 
-.iconeImg,
-.iconeHold  {
+.button{
+    text-decoration: none;
+    color: var(--clr-dark);
+}
+
+.iconeImg {
     width: 30px;
     display: block;
     position: absolute;
     left: 7vw;
 }
-.btnText{
-    display:block;
-    position: relative;
-    left: -1vw;
 
+#currentPly1,#currentPly2{
+    width:.5em
 }
-.btnHold{
-    display:block;
-    position: relative;
-    left: -2vw;
 
-}
-.button{
-    text-decoration: none;
-    color: black;
-}
 .dice{
     width:15vw;
     padding-top:2em
 }
+
+.diceStyle{height: 100%;}
+
+.copyright{
+    padding-top:.8rem;
+    text-align:right;
+    font-size: .5rem;
+}
+
+.creatParty{
+    margin-top:20vh
+}
+
+.winnerTitle,
+#winner{
+    margin-top:10vh;
+    text-align: center;
+    color: var(--clr-dark);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
 .end-party{
     z-index: 2;
-    background-color: aqua;
-    border: solid;
+    background-color:var(--clr-clear);
+    margin:auto ;
+    padding:2vw;
+    border: solid 1.5px;
+    border-color: var(--clr-dark);
+    border-radius: 5%;
     height:100px;
-    top: 50px;
+    top: 15vh;
    display: block;
     width:80%;
-    height: 75%;
+    height: 70%;
     position:fixed;
     left: 10%;
 
   
 }
-
-@media (max-width:393px) and (orientation:portrait) {
+@media (min-width:699px) and (max-width:1018px)  {
     header{
-        height: 5vh;
+        margin-top:-4vh;
     }
-    .playGround,
-    .boardPart{
-        margin-top: 6vh;
-        height: 18vh;
 
-    }
-    .current{
-        padding-top:1rem
-    }
     .btnText,
     .btnHold {
-    display: none;
+        display: block
     }
-#plr1,
-#plr2{
-    font-weight: 700;
-    font-size: 1.5rem;
-  
-}
-    .diceStyle{height: 100%;}
-    footer{
-        font-size: 1.5rem;
-        min-height: 2vh;
+
+    .iconeImg {
+        left: 3vw;
+    }
+    
+    .current{
+        width: 22vw;
+        height:12vh;
+        line-height:1.8rem
     }
 }
 
-/*@media screen and (orientation: portrait) {
-    header,main,.footertest
-    {
-      /* Rotate the content container */
-      /* transform: rotate(-90deg); */
-      /* transform-origin: left top; */
-      /* Set content width to viewport height */
-      /* width: 100vh; */
-      /* Set content height to viewport width */
-      /* height: 100vw; */
-      /* overflow-x: hidden; */
-      /* position: absolute; */
-      /* top:100%; */
-      /* margin:auto; */
-      /* left: 0; */
-    /* }
-    header{
-        height:2%
+
+@media (min-width:1019px){
+    .btnText,
+    .btnHold {
+        display: block;
+        font-size: var(--fs-h3);
     }
-    main{
-        height:2%
+
+    .iconeImg {
+         left: 7vw;
     }
-    .footertest{
-        transform: rotate(-90deg);
-        transform-origin: left bottom;
-              top:100%;
- 
-         left:95%;
-        width: 100vh 
-    } */
-  /* } */
+
+    .current{
+        width: 22vw;
+        height:15vh;
+       line-height:3rem;
+       font-size: var(--fs-h2);
+    }
+    
+    .dice{
+        width:10vw;
+        padding-top:2em
+    }
+}

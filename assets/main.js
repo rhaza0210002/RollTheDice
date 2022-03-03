@@ -53,7 +53,6 @@ const currentScore = (value) => {
         } else {
             curr2 = value;
             currentScorePlyr2.text(curr2)
-
             return curr2;
         }
     } else {
@@ -64,7 +63,6 @@ const currentScore = (value) => {
         } else {
             curr2 = 0;
             currentScorePlyr2.text(1)
-
             return curr2;
         }
     }
@@ -101,8 +99,6 @@ const control = () => {
 }
 
 $(window).on("load",() => {
-
-    console.log('jquery inclut');
     resetEl()
     endParty.removeAttr('style').hide();
 })
